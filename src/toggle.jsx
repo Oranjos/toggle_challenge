@@ -3,17 +3,22 @@ import { useState } from "react";
 const ToggleChallenge = () => {
   const [showAlert, setShowAlert] = useState(false);
 
-  const toggleAlert = () => {
-    if (showAlert) {
-      setShowAlert(false);
-      return;
-    }
-    setShowAlert(true);
-  };
+  //   const toggleAlert = () => {
+  // if (showAlert) {
+  //   setShowAlert(false);
+  //   return;
+  // }
+  // setShowAlert(true);
+  //   };
 
   return (
     <div className="bit">
-      <button className="btn" onClick={toggleAlert}>
+      <button
+        className="btn"
+        onClick={() => {
+          setShowAlert(!showAlert);
+        }}
+      >
         toggle
       </button>
       {showAlert && <Alert />}
